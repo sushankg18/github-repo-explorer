@@ -1,96 +1,77 @@
-# Repo Explorer
+# GitHub Repo Explorer
 
-A production-ready GitHub Repository Explorer built with **React + Chakra UI v2** on the frontend and **Node.js + Express + Axios** on the backend.
+A full-stack GitHub Repository Explorer built with React, Chakra UI, Node.js, and Express.
 
-Modern dark GitHub-inspired design with profile, repository grid, language analytics donut chart, and recent searches.
+The application allows users to search for any public GitHub profile, view profile information, explore repositories, and analyze language usage through a clean and responsive interface.
 
-## Project structure
+## Features
 
-```
-github-repo-explorer/
-├── server/                 # Express + Axios API
-│   ├── index.js
-│   ├── package.json
-│   └── .env.example
-└── client/                 # React + Chakra UI v2 + Vite
-    ├── index.html
-    ├── vite.config.js
-    ├── package.json
-    └── src/
-        ├── main.jsx
-        ├── App.jsx
-        ├── theme.js
-        ├── components/
-        │   ├── Card.jsx
-        │   ├── ErrorState.jsx
-        │   ├── Hero.jsx
-        │   ├── LanguageChart.jsx
-        │   ├── Navbar.jsx
-        │   ├── RecentSearches.jsx
-        │   ├── RepositoryCard.jsx
-        │   ├── RepositoryGrid.jsx
-        │   └── UserProfileCard.jsx
-        └── services/
-            ├── api.js
-            └── languages.js
-```
+- Search any GitHub username
+- View profile details (avatar, bio, followers, following, repositories)
+- Browse repositories with stars, forks, language, and last updated date
+- Sort repositories by stars, recent updates, or name
+- Language analytics chart
+- Recent searches stored in localStorage
+- Responsive design for desktop, tablet, and mobile
 
-## Quick start
+## Tech Stack
 
-Run **two terminals** — one for the API, one for the React app.
+### Frontend
+- React
+- Vite
+- Chakra UI
+- Axios
 
-### 1. Backend
+### Backend
+- Node.js
+- Express.js
+- Axios
+
+## Getting Started
+
+### Backend
 
 ```bash
 cd server
-cp .env.example .env          # optional: add a GITHUB_TOKEN
 npm install
-npm start                      # http://localhost:5000
+npm start
 ```
 
-### 2. Frontend
+### Frontend
 
 ```bash
 cd client
 npm install
-npm run dev                    # http://localhost:5173
+npm run dev
 ```
 
-The Vite dev server proxies `/api/*` to the backend on port 5000.
+## API Endpoint
 
-## API
-
-`GET /api/github/:username` returns:
-
-```json
-{
-  "success": true,
-  "user":  { "...": "GitHub user profile" },
-  "repos": [ { "...": "Sanitized repository fields" } ]
-}
+```http
+GET /api/github/:username
 ```
 
-Errors include `{ success: false, error: "..." }` with appropriate status codes.
+Example:
 
-## Features
+```http
+GET /api/github/torvalds
+```
 
-- Search any GitHub username from the navbar
-- User profile card (avatar, bio, company, location, blog, stats)
-- 2-column repository grid with hover lift animation
-- Sort by stars, recently updated, or name (A–Z)
-- Donut chart for language breakdown
-- Recent searches persisted in `localStorage`
-- Loading skeletons, inline error banners, empty states
-- Fully responsive: 3-column desktop, 2-column tablet, single-column mobile with a hamburger drawer
+## Challenges
 
-## Tech stack
+- Handling GitHub API rate limits
+- Managing loading and error states
+- Creating reusable and responsive UI components
 
-- React 18, Vite
-- Chakra UI v2, Emotion, Framer Motion
-- React Icons
-- Axios
-- Express 4
+## Future Improvements
 
-## Notes
+- Repository pagination
+- Search suggestions
+- Dark/Light theme toggle
+- Advanced repository filters
 
-GitHub's unauthenticated REST API allows **60 requests/hour per IP**. Set `GITHUB_TOKEN` in `server/.env` to bump that to **5,000/hour** (no scopes required for public data).
+## Author
+
+Sushank
+
+Built as part of the Studio Graphene Associate Software Engineer assignment.
