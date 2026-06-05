@@ -1,14 +1,3 @@
-/**
- * GitHub Repository Explorer - Backend Server
- *
- * Express.js API that proxies GitHub's public REST API and returns a
- * combined payload of the user's profile + repositories.
- *
- * Endpoints:
- *   GET  /api/health
- *   GET  /api/github/:username
- */
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -21,7 +10,6 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
 app.use(cors());
 app.use(express.json());
 
-// Pre-configured axios instance for GitHub
 const github = axios.create({
   baseURL: 'https://api.github.com',
   timeout: 15000,
@@ -37,10 +25,6 @@ app.get('/api/health', (_req, res) => {
   res.json({ success: true, status: 'ok', uptime: process.uptime() });
 });
 
-/**
- * GET /api/github/:username
- * Fetch the GitHub profile and (up to 100) repositories for a username.
- */
 app.get('/api/github/:username', async (req, res) => {
   const { username } = req.params;
 

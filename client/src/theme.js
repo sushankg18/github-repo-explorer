@@ -1,9 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
 
-/**
- * GitHub-inspired dark theme.
- * Centralizes colors, typography and component baselines used across the app.
- */
 const colors = {
   brand: {
     bg: '#020817',

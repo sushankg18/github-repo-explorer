@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-/**
- * Centralised API client for the Repo Explorer backend.
- * In dev, `/api` is proxied by Vite to the Express server on port 5000.
- */
 const api = axios.create({
   baseURL: '/api',
   timeout: 20000,

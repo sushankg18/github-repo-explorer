@@ -102,8 +102,10 @@ export default function App() {
         as="main"
         pt="64px"
         animation={`${fadeIn} 0.45s ease-out`}
+        
       >
-        <Container maxW="1400px" px={{ base: 4, md: 6 }} pb={16}>
+        <Container 
+        maxW="1400px" px={{ base: 4, md: 6 }} pb={16}>
           <Hero />
 
           {error && <ErrorState message={error} />}

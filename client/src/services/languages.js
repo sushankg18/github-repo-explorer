@@ -1,7 +1,4 @@
-/**
- * Map of common GitHub language colors (matching github/linguist).
- * Returns a fallback gray for unknown languages.
- */
+
 const LANGUAGE_COLORS = {
   JavaScript: '#F1E05A',
   TypeScript: '#3178C6',
@@ -47,10 +44,6 @@ export function languageColor(name) {
   return LANGUAGE_COLORS[name] || LANGUAGE_COLORS.Other;
 }
 
-/**
- * Compute language distribution (count-based) from an array of repos.
- * Groups everything beyond the top `topN` into "Other".
- */
 export function computeLanguageStats(repos, topN = 4) {
   const counts = new Map();
   for (const repo of repos || []) {

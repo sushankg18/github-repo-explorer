@@ -63,7 +63,7 @@ function MetaRow({ icon, children }) {
 
 export function UserProfileCardSkeleton() {
   return (
-    <Card>
+    <Card >
       <VStack spacing={4} align="stretch">
         <Flex align="center" gap={4}>
           <SkeletonCircle size="64px" startColor="#1F2937" endColor="#0F172A" />
@@ -90,7 +90,8 @@ export default function UserProfileCard({ user }) {
 
   return (
     <Card>
-      <VStack spacing={4} align="stretch">
+      <VStack spacing={4} 
+      align="stretch">
         <Flex align="center" gap={4}>
           <Avatar
             size="lg"
@@ -148,7 +149,7 @@ export default function UserProfileCard({ user }) {
 
         <Divider borderColor="brand.border" />
 
-        <SimpleGrid columns={3} spacing={2}>
+        <SimpleGrid  columns={3} spacing={2}>
           <StatTile label="Repos" value={user.public_repos} />
           <StatTile label="Followers" value={user.followers} />
           <StatTile label="Following" value={user.following} />

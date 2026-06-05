@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Flex,
+  Heading,
   HStack,
   Link,
   Tag,
@@ -14,6 +15,7 @@ import {
 import { FiGitBranch, FiStar, FiClock } from 'react-icons/fi';
 import Card from './Card.jsx';
 import { languageColor } from '../services/languages.js';
+import { FiArrowUpRight } from "react-icons/fi";
 
 
 function formatRelative(iso) {
@@ -53,11 +55,10 @@ export default function RepositoryCard({ repo }) {
     <Card  as="article" display="flex" flexDirection="column" h="full">
       <Flex justify="space-between" align="flex-start" gap={3} mb={2}>
 
-        <Text fontSize="md"
+        <Heading size={'sm'}
           fontWeight={700}
-          color="brand.primary"
           noOfLines={1}
-          minW={0}>{repo.name}</Text>
+          minW={0}>{repo.name}</Heading>
         <Text
           fontSize="2xs"
           px={2}
@@ -87,10 +88,12 @@ export default function RepositoryCard({ repo }) {
         fontWeight={700}
         color="brand.primary"
         _hover={{ textDecoration: 'underline' }}
-        noOfLines={1}
         minW={0}
+        display={'flex'}
+        gap={'1'}
       >
-        <Text size={'sm'} pb={'1'}>View Repository</Text>
+        <Text fontSize={'xs'} pb={'1'}>View Repository</Text> <FiArrowUpRight />
+
       </Link>
       {topics.length > 0 && (
         <Wrap spacing={2} mb={4}>
