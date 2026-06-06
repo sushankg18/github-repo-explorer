@@ -106,7 +106,7 @@ export default function App() {
       >
         <Container 
         maxW="1400px" px={{ base: 4, md: 6 }} pb={16}>
-          <Hero />
+          {/* <Hero /> */}
 
           {error && <ErrorState message={error} />}
 
@@ -117,6 +117,7 @@ export default function App() {
               xl: '320px minmax(0, 1fr) 280px',
             }}
             gap={6}
+            mt={'3rem'}
             alignItems="flex-start"
           >
             {/* Left sidebar */}
