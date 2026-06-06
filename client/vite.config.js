@@ -9,7 +9,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://github-repo-explorer-roq0.onrender.com',
+        target: 'http://localhost:5000',
         changeOrigin: true,
       },
     },

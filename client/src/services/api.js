@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://github-repo-explorer-665e.onrender.com/api',
   timeout: 20000,
   headers: { 'Content-Type': 'application/json' },
 });
